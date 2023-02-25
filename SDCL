@@ -30,7 +30,7 @@ baseui.Name = "ScriptedUI"
 baseui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 local BG = Instance.new("Frame")
-BG.BackgroundColor3 = Color3.fromRGB(20,20,20)
+BG.BackgroundColor3 = Color3.fromGB(20,20,20)
 BG.Position = UDim2.new(0.5,0,0.5,0)
 BG.AnchorPoint = Vector2.new(0.5,0.5)
 BG.Size = UDim2.fromOffset(743, 448)
@@ -194,7 +194,7 @@ function lib:NewTab(name, desc)
 	SectionTitle.Size = UDim2.new(0, 129, 0, 49)
 	SectionTitle.Font = Enum.Font.SourceSansItalic
 	SectionTitle.Text = name
-	SectionTitle.TextColor3 = Color3.fromRGB(105, 122, 141)
+	SectionTitle.TextColor3 = Color3.fromRGB(79, 35, 141)
 	SectionTitle.TextSize = 24.000
 	SectionTitle.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -265,7 +265,7 @@ function lib:NewTab(name, desc)
 			lib.SelectedTab.sectionBG.Visible = true
 			lib.SelectedTab.button.BackgroundColor3 = Color3.fromRGB(45,40,50)
 			lib.SelectedTab.button.BackgroundTransparency = 0
-			lib.SelectedTab.TitleInstance.TextColor3 = Color3.fromRGB(83, 57, 205)
+			lib.SelectedTab.TitleInstance.TextColor3 = Color3.fromRGB(156, 57, 205)
 		end
 	end)
 
