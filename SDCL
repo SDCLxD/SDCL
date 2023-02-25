@@ -156,7 +156,7 @@ function lib:NewTab(name, desc)
 	TabButton.AutoButtonColor = false
 	TabButton.Font = Enum.Font.GothamMedium
 	TabButton.Text = ""
-	TabButton.TextColor3 = Color3.fromRGB(105, 57, 205)
+	TabButton.TextColor3 = Color3.fromRGB(83, 57, 205)
 	TabButton.TextSize = 14.000
 
 	local TabCorner = Instance.new("UICorner")
@@ -170,9 +170,9 @@ function lib:NewTab(name, desc)
 	TabTitle.Size = UDim2.new(1, 0, 1, 0)
 	TabTitle.Font = Enum.Font.GothamBold
 	TabTitle.Text = name
-	TabTitle.TextColor3 = #lib.Tabs == 0 and Color3.fromRGB(105, 57, 205) or Color3.fromRGB(70,70,70) -- SELECTED: Color3.fromRGB(105, 57, 205)
+	TabTitle.TextColor3 = #lib.Tabs == 0 and Color3.fromRGB(83, 57, 205) or Color3.fromRGB(70,70,70) -- SELECTED: Color3.fromRGB(83, 57, 205)
 	TabTitle.TextSize = 14.000
-	TabTitle.TextStrokeColor3 = Color3.fromRGB(105, 57, 205)
+	TabTitle.TextStrokeColor3 = Color3.fromRGB(83, 57, 205)
 
 	local sectionBG = Instance.new("Frame")
 	sectionBG.BackgroundColor3 = Color3.fromRGB(24,24,24)
@@ -265,7 +265,7 @@ function lib:NewTab(name, desc)
 			lib.SelectedTab.sectionBG.Visible = true
 			lib.SelectedTab.button.BackgroundColor3 = Color3.fromRGB(45,40,50)
 			lib.SelectedTab.button.BackgroundTransparency = 0
-			lib.SelectedTab.TitleInstance.TextColor3 = Color3.fromRGB(105, 108, 255)
+			lib.SelectedTab.TitleInstance.TextColor3 = Color3.fromRGB(83, 57, 205)
 		end
 	end)
 
@@ -381,7 +381,7 @@ function lib:NewTab(name, desc)
 		else
 			ToggleText.TextTransparency = 0
 			ImageLabel.Visible = true
-			Checkbox.BackgroundColor3 = Color3.fromRGB(105, 108, 255)
+			Checkbox.BackgroundColor3 = Color3.fromRGB(83, 57, 205)
 			UIStroke.Color = Color3.fromRGB(72,74,76)
 		end
 
@@ -398,7 +398,7 @@ function lib:NewTab(name, desc)
 				ImageLabel.Visible = true
 
 				game:GetService("TweenService"):Create(ToggleText,TweenInfo.new(0.15),{TextTransparency = 0},"InOut","Sine"):Play()
-				game:GetService("TweenService"):Create(Checkbox,TweenInfo.new(0.15),{BackgroundColor3 = Color3.fromRGB(105, 108, 255)},"InOut","Sine"):Play()
+				game:GetService("TweenService"):Create(Checkbox,TweenInfo.new(0.15),{BackgroundColor3 = Color3.fromRGB(83, 57, 205)},"InOut","Sine"):Play()
 				game:GetService("TweenService"):Create(UIStroke,TweenInfo.new(0.15),{Color = Color3.fromRGB(60,60,60)},"InOut","Sine"):Play()
 
 			end
