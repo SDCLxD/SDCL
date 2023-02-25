@@ -156,7 +156,7 @@ function lib:NewTab(name, desc)
 	TabButton.AutoButtonColor = false
 	TabButton.Font = Enum.Font.GothamMedium
 	TabButton.Text = ""
-	TabButton.TextColor3 = Color3.fromRGB(83, 57, 205)
+	TabButton.TextColor3 = Color3.fromRGB(156, 57, 205)
 	TabButton.TextSize = 14.000
 
 	local TabCorner = Instance.new("UICorner")
@@ -170,9 +170,9 @@ function lib:NewTab(name, desc)
 	TabTitle.Size = UDim2.new(1, 0, 1, 0)
 	TabTitle.Font = Enum.Font.GothamBold
 	TabTitle.Text = name
-	TabTitle.TextColor3 = #lib.Tabs == 0 and Color3.fromRGB(83, 57, 205) or Color3.fromRGB(70,70,70) -- SELECTED: Color3.fromRGB(83, 57, 205)
+	TabTitle.TextColor3 = #lib.Tabs == 0 and Color3.fromRGB(156, 57, 205) or Color3.fromRGB(70,70,70) -- SELECTED: Color3.fromRGB(156, 57, 205)
 	TabTitle.TextSize = 14.000
-	TabTitle.TextStrokeColor3 = Color3.fromRGB(83, 57, 205)
+	TabTitle.TextStrokeColor3 = Color3.fromRGB(156, 57, 205)
 
 	local sectionBG = Instance.new("Frame")
 	sectionBG.BackgroundColor3 = Color3.fromRGB(24,24,24)
