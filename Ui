@@ -7353,9 +7353,9 @@ function library:CreateWindow(options, ...)
 		}
 		local daaata = {{"AddTextbox", "__Designer.Textbox.ImageAssetID", backgroundsection, {
 			Name = "Image Asset ID",
-			Placeholder = "rbxassetid://12144487749",
+			Placeholder = "rbxassetid://12787788699",
 			Flag = "__Designer.Background.ImageAssetID",
-			Value = "rbxassetid://12144487749",
+			Value = "rbxassetid://12787788699",
 			Callback = updatecolorsnotween
 		}}, {"AddColorpicker", "__Designer.Colorpicker.ImageColor", backgroundsection, {
 			Name = "Image Color",
