@@ -145,8 +145,8 @@ function library:Window(name)
     local Window = Instance.new("Frame")
     Minimise.Name = "Minimise"
     Minimise.Parent = Header
-    Minimise.BackgroundColor3 = Color3.fromRGB(18,18,18)
-    Minimise.BorderColor3 = Color3.fromRGB(18,18,18)
+    Minimise.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+    Minimise.BorderColor3 = Color3.fromRGB(18, 18, 18)
     Minimise.Position = UDim2.new(0, 185, 0, 2)
     Minimise.Size = UDim2.new(0, 22, 0, 22)
     Minimise.ZIndex = 7 + zindex
@@ -279,7 +279,7 @@ function library:Window(name)
 
         ToggleFiller.Name = "ToggleFiller"
         ToggleFiller.Parent = ToggleButton
-        ToggleFiller.BackgroundColor3 = Color3.fromRGB(68, 189, 50)
+        ToggleFiller.BackgroundColor3 = Color3.fromRGB(148, 4, 200)
         ToggleFiller.BorderColor3 = Color3.fromRGB(47, 54, 64)
         ToggleFiller.Position = UDim2.new(0, 5, 0, 5)
         ToggleFiller.Size = UDim2.new(0, 12, 0, 12)
@@ -310,6 +310,7 @@ function library:Window(name)
         TextBox.TextStrokeColor3 = Color3.fromRGB(245, 246, 250)
         TextBox.ZIndex = 2 + zindex
         TextBox:GetPropertyChangedSignal('Text'):connect(function()
+	TextBox.ClipsDescendantss = true
             callback(TextBox.Text, false)
         end)
         TextBox.FocusLost:Connect(function()
