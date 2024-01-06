@@ -622,7 +622,7 @@ function Library:AddWindow(title, gameName)
                 Button.ZIndex = 2
                 Button.AutoButtonColor = false
                 Button.Font = Enum.Font.Ubuntu
-                Button.Text = " Button"
+                Button.Text = " " .. btitle
                 Button.TextColor3 = Color3.new(1, 1, 1)
                 Button.TextSize = 16
                 Button.TextXAlignment = Enum.TextXAlignment.Left
