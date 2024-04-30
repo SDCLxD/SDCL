@@ -655,9 +655,35 @@ function Library:AddWindow(title, gameName)
                 local ToggleDesc = Instance.new("TextLabel")
                 local LabelCorner = Instance.new("UICorner")
 
-                if description == false then
+                if not description then
                     ToggleDesc:Destroy()
+                    ToggleText.Name = "ToggleText"
+                    ToggleText.Parent = Toggle
+                    ToggleText.BackgroundColor3 = Color3.new(1, 1, 1)
+                    ToggleText.BackgroundTransparency = 1
+                    ToggleText.BorderColor3 = Color3.new(0, 0, 0)
+                    ToggleText.BorderSizePixel = 0
+                    ToggleText.Position = UDim2.new(0, 0, 0, 0)
+                    ToggleText.Size = UDim2.new(0, 325, 0, 15)
+                    ToggleText.Font = Enum.Font.Ubuntu
+                    ToggleText.Text = " " .. togtitle
+                    ToggleText.TextColor3 = Color3.new(1, 1, 1)
+                    ToggleText.TextSize = 16
+                    ToggleText.TextXAlignment = Enum.TextXAlignment.Left
                 else
+                    ToggleText.Name = "ToggleText"
+                    ToggleText.Parent = Toggle
+                    ToggleText.BackgroundColor3 = Color3.new(1, 1, 1)
+                    ToggleText.BackgroundTransparency = 1
+                    ToggleText.BorderColor3 = Color3.new(0, 0, 0)
+                    ToggleText.BorderSizePixel = 0
+                    ToggleText.Position = UDim2.new(0, 0, 0, 1)
+                    ToggleText.Size = UDim2.new(0, 325, 0, 15)
+                    ToggleText.Font = Enum.Font.Ubuntu
+                    ToggleText.Text = " " .. togtitle
+                    ToggleText.TextColor3 = Color3.new(1, 1, 1)
+                    ToggleText.TextSize = 16
+                    ToggleText.TextXAlignment = Enum.TextXAlignment.Left
                     ToggleDesc.Name = "ToggleDesc"
                     ToggleDesc.Parent = Toggle
                     ToggleDesc.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -677,20 +703,6 @@ function Library:AddWindow(title, gameName)
                 Toggle.BorderColor3 = Color3.new(0, 0, 0)
                 Toggle.BorderSizePixel = 0
                 Toggle.Size = UDim2.new(0, 435, 0, 34)
-
-                ToggleText.Name = "ToggleText"
-                ToggleText.Parent = Toggle
-                ToggleText.BackgroundColor3 = Color3.new(1, 1, 1)
-                ToggleText.BackgroundTransparency = 1
-                ToggleText.BorderColor3 = Color3.new(0, 0, 0)
-                ToggleText.BorderSizePixel = 0
-                ToggleText.Position = UDim2.new(0, 0, 0, 1)
-                ToggleText.Size = UDim2.new(0, 325, 0, 15)
-                ToggleText.Font = Enum.Font.Ubuntu
-                ToggleText.Text = " " .. togtitle
-                ToggleText.TextColor3 = Color3.new(1, 1, 1)
-                ToggleText.TextSize = 16
-                ToggleText.TextXAlignment = Enum.TextXAlignment.Left
 
                 Label.Name = "Label"
                 Label.Parent = Toggle
