@@ -655,7 +655,7 @@ function Library:AddWindow(title, gameName)
                 local ToggleDesc = Instance.new("TextLabel")
                 local LabelCorner = Instance.new("UICorner")
 
-                if not description then
+                if description == false then
                     ToggleDesc:Destroy()
                     ToggleText.Name = "ToggleText"
                     ToggleText.Parent = Toggle
@@ -663,7 +663,7 @@ function Library:AddWindow(title, gameName)
                     ToggleText.BackgroundTransparency = 1
                     ToggleText.BorderColor3 = Color3.new(0, 0, 0)
                     ToggleText.BorderSizePixel = 0
-                    ToggleText.Position = UDim2.new(0, 0, 0, 0)
+                    ToggleText.Position = UDim2.new(0, 0, 0, -1)
                     ToggleText.Size = UDim2.new(0, 325, 0, 15)
                     ToggleText.Font = Enum.Font.Ubuntu
                     ToggleText.Text = " " .. togtitle
