@@ -657,19 +657,6 @@ function Library:AddWindow(title, gameName)
 
                 if description == false then
                     ToggleDesc:Destroy()
-                    ToggleText.Name = "ToggleText"
-                    ToggleText.Parent = Toggle
-                    ToggleText.BackgroundColor3 = Color3.new(1, 1, 1)
-                    ToggleText.BackgroundTransparency = 1
-                    ToggleText.BorderColor3 = Color3.new(0, 0, 0)
-                    ToggleText.BorderSizePixel = 0
-                    ToggleText.Position = UDim2.new(0, 0, 0, -5)
-                    ToggleText.Size = UDim2.new(0, 325, 0, 15)
-                    ToggleText.Font = Enum.Font.Ubuntu
-                    ToggleText.Text = " " .. togtitle
-                    ToggleText.TextColor3 = Color3.new(1, 1, 1)
-                    ToggleText.TextSize = 16
-                    ToggleText.TextXAlignment = Enum.TextXAlignment.Left
                 else
                     ToggleText.Name = "ToggleText"
                     ToggleText.Parent = Toggle
@@ -691,11 +678,25 @@ function Library:AddWindow(title, gameName)
                     ToggleDesc.Position = UDim2.new(0, 0, 0, 18)
                     ToggleDesc.Size = UDim2.new(0, 325, 0, 12)
                     ToggleDesc.Font = Enum.Font.Ubuntu
-                    ToggleDesc.Text = " testing" .. description
+                    ToggleDesc.Text = " " .. description
                     ToggleDesc.TextColor3 = Color3.fromRGB(255, 255, 255)
                     ToggleDesc.TextSize = 12.000
                     ToggleDesc.TextXAlignment = Enum.TextXAlignment.Left
                 end
+
+                ToggleText.Name = "ToggleText"
+                ToggleText.Parent = Toggle
+                ToggleText.BackgroundColor3 = Color3.new(1, 1, 1)
+                ToggleText.BackgroundTransparency = 1
+                ToggleText.BorderColor3 = Color3.new(0, 0, 0)
+                ToggleText.BorderSizePixel = 0
+                ToggleText.Position = UDim2.new(0, 0, 0, -15)
+                ToggleText.Size = UDim2.new(0, 325, 0, 15)
+                ToggleText.Font = Enum.Font.Ubuntu
+                ToggleText.Text = " " .. togtitle
+                ToggleText.TextColor3 = Color3.new(1, 1, 1)
+                ToggleText.TextSize = 16
+                ToggleText.TextXAlignment = Enum.TextXAlignment.Left
                 
                 Toggle.Name = "Toggle"
                 Toggle.Parent = SectionFrame
