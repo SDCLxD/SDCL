@@ -690,7 +690,7 @@ function Library:AddWindow(title, gameName)
                 ToggleText.BackgroundTransparency = 1
                 ToggleText.BorderColor3 = Color3.new(0, 0, 0)
                 ToggleText.BorderSizePixel = 0
-                ToggleText.Position = UDim2.new(0, 0, 0, -15)
+                ToggleText.Position = UDim2.new(0, 0, 0, 5)
                 ToggleText.Size = UDim2.new(0, 325, 0, 15)
                 ToggleText.Font = Enum.Font.Ubuntu
                 ToggleText.Text = " " .. togtitle
