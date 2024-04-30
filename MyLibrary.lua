@@ -690,7 +690,7 @@ function Library:AddWindow(title, gameName)
                 ToggleText.BackgroundTransparency = 1
                 ToggleText.BorderColor3 = Color3.new(0, 0, 0)
                 ToggleText.BorderSizePixel = 0
-                ToggleText.Position = UDim2.new(0, 0, 0, 5)
+                ToggleText.Position = UDim2.new(0, 0, 0, 8)
                 ToggleText.Size = UDim2.new(0, 325, 0, 15)
                 ToggleText.Font = Enum.Font.Ubuntu
                 ToggleText.Text = " " .. togtitle
@@ -1269,6 +1269,7 @@ function Library:AddWindow(title, gameName)
                     Box.Text = ""
                     Box.TextColor3 = Color3.fromRGB(255, 255, 255)
                     Box.TextSize = 18.000
+                    Box.TextTruncate = Enum.TextTruncate.AtEnd
                 
                     UICorner_2.CornerRadius = UDim.new(0, 4)
                     UICorner_2.Parent = Box
@@ -1332,4 +1333,5 @@ function Library:AddWindow(title, gameName)
     end
     return Tabs
 end
+
 return Library
