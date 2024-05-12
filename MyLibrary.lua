@@ -641,154 +641,154 @@ function Library:AddWindow(title, gameName)
             end
 
             function Elements:AddToggle(togtitle, setting, callback)
-                togtitle = togtitle or "Toggle"
-                callback = callback or function() end
-
-                local description = setting.Description
-                local tog = setting.Toggled or false
-
-                local Toggle = Instance.new("Frame")
-                local ToggleText = Instance.new("TextLabel")
-                local Label = Instance.new("ImageLabel")
-                local Circle = Instance.new("ImageLabel")
-                local EnableButton = Instance.new("TextButton")
-                local ToggleDesc = Instance.new("TextLabel")
-                local LabelCorner = Instance.new("UICorner")
-
-                if description == false then
-                    ToggleDesc:Destroy()
-                    ToggleText.Name = "ToggleText"
-                    ToggleText.Parent = Toggle
-                    ToggleText.BackgroundColor3 = Color3.new(1, 1, 1)
-                    ToggleText.BackgroundTransparency = 1
-                    ToggleText.BorderColor3 = Color3.new(0, 0, 0)
-                    ToggleText.BorderSizePixel = 0
-                    ToggleText.Position = UDim2.new(0, 0, 0, 8)
-                    ToggleText.Size = UDim2.new(0, 325, 0, 15)
-                    ToggleText.Font = Enum.Font.Ubuntu
-                    ToggleText.Text = " " .. togtitle
-                    ToggleText.TextColor3 = Color3.new(1, 1, 1)
-                    ToggleText.TextSize = 16
-                    ToggleText.TextXAlignment = Enum.TextXAlignment.Left
-                else
-                    ToggleText.Name = "ToggleText"
-                    ToggleText.Parent = Toggle
-                    ToggleText.BackgroundColor3 = Color3.new(1, 1, 1)
-                    ToggleText.BackgroundTransparency = 1
-                    ToggleText.BorderColor3 = Color3.new(0, 0, 0)
-                    ToggleText.BorderSizePixel = 0
-                    ToggleText.Position = UDim2.new(0, 0, 0, 1)
-                    ToggleText.Size = UDim2.new(0, 325, 0, 15)
-                    ToggleText.Font = Enum.Font.Ubuntu
-                    ToggleText.Text = " " .. togtitle
-                    ToggleText.TextColor3 = Color3.new(1, 1, 1)
-                    ToggleText.TextSize = 16
-                    ToggleText.TextXAlignment = Enum.TextXAlignment.Left
-                    ToggleDesc.Name = "ToggleDesc"
-                    ToggleDesc.Parent = Toggle
-                    ToggleDesc.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-                    ToggleDesc.BackgroundTransparency = 1.000
-                    ToggleDesc.Position = UDim2.new(0, 0, 0, 18)
-                    ToggleDesc.Size = UDim2.new(0, 325, 0, 12)
-                    ToggleDesc.Font = Enum.Font.Ubuntu
-                    ToggleDesc.Text = " " .. description
-                    ToggleDesc.TextColor3 = Color3.fromRGB(255, 255, 255)
-                    ToggleDesc.TextSize = 12.000
-                    ToggleDesc.TextXAlignment = Enum.TextXAlignment.Left
-                end
-                
-                Toggle.Name = "Toggle"
-                Toggle.Parent = SectionFrame
-                Toggle.BackgroundColor3 = Color3.new(0.0862745, 0.0862745, 0.0862745)
-                Toggle.BorderColor3 = Color3.new(0, 0, 0)
-                Toggle.BorderSizePixel = 0
-                Toggle.Size = UDim2.new(0, 435, 0, 34)
-
-                Label.Name = "Label"
-                Label.Parent = Toggle
-                Label.BackgroundColor3 = Color3.new(1, 1, 1)
-                Label.BackgroundTransparency = 1
-                Label.Position = UDim2.new(0, 368, 0, 5)
-                Label.Size = UDim2.new(0, 48, 0, 25)
-                Label.Image = "rbxassetid://3570695787"
-                Label.ImageColor3 = Color3.new(0, 0, 0)
-                Label.ScaleType = Enum.ScaleType.Slice
-                Label.SliceCenter = Rect.new(100, 100, 100, 100)
-
-                LabelCorner.CornerRadius = UDim.new(0, 4)
-                LabelCorner.Name = "LabelCorner"
-                LabelCorner.Parent = Label
-
-                Circle.Name = "Circle"
-                Circle.Parent = Label
-                Circle.BackgroundColor3 = Color3.new(1, 1, 1)
-                Circle.BackgroundTransparency = 1
-                Circle.Position = UDim2.new(0, 4, 0, 4)
-                Circle.Size = UDim2.new(0, 18, 0, 18)
-                Circle.Image = "rbxassetid://3570695787"
-                Circle.ImageColor3 = Color3.fromRGB(200, 200, 200)
-                Circle.ScaleType = Enum.ScaleType.Slice
-                Circle.SliceCenter = Rect.new(100, 100, 100, 100)
-
-                EnableButton.Name = "EnableButton"
-                EnableButton.Parent = Circle
-                EnableButton.BackgroundColor3 = Color3.new(1, 1, 1)
-                EnableButton.BackgroundTransparency = 1
-                EnableButton.BorderColor3 = Color3.new(0, 0, 0)
-                EnableButton.BorderSizePixel = 0
-                EnableButton.Size = UDim2.new(1, 0, 1, 0)
-                EnableButton.Font = Enum.Font.SourceSans
-                EnableButton.Text = ""
-                EnableButton.TextColor3 = Color3.new(0, 0, 0)
-                EnableButton.TextSize = 14
-
-                local isToggle = false
-
-                if tog == true then
+            togtitle = togtitle or "Toggle"
+            callback = callback or function() end
+        
+            local description = setting.Description
+            local tog = setting.Toggled or false
+        
+            local Toggle = Instance.new("Frame")
+            local ToggleText = Instance.new("TextLabel")
+            local Label = Instance.new("ImageLabel")
+            local Circle = Instance.new("ImageLabel")
+            local EnableButton = Instance.new("TextButton")
+            local ToggleDesc = Instance.new("TextLabel")
+            local LabelCorner = Instance.new("UICorner")
+        
+            if description == false then
+                ToggleDesc:Destroy()
+                ToggleText.Name = "ToggleText"
+                ToggleText.Parent = Toggle
+                ToggleText.BackgroundColor3 = Color3.new(1, 1, 1)
+                ToggleText.BackgroundTransparency = 1
+                ToggleText.BorderColor3 = Color3.new(0, 0, 0)
+                ToggleText.BorderSizePixel = 0
+                ToggleText.Position = UDim2.new(0, 0, 0, 8)
+                ToggleText.Size = UDim2.new(0, 325, 0, 15)
+                ToggleText.Font = Enum.Font.Ubuntu
+                ToggleText.Text = " " .. togtitle
+                ToggleText.TextColor3 = Color3.new(1, 1, 1)
+                ToggleText.TextSize = 16
+                ToggleText.TextXAlignment = Enum.TextXAlignment.Left
+            else
+                ToggleText.Name = "ToggleText"
+                ToggleText.Parent = Toggle
+                ToggleText.BackgroundColor3 = Color3.new(1, 1, 1)
+                ToggleText.BackgroundTransparency = 1
+                ToggleText.BorderColor3 = Color3.new(0, 0, 0)
+                ToggleText.BorderSizePixel = 0
+                ToggleText.Position = UDim2.new(0, 0, 0, 1)
+                ToggleText.Size = UDim2.new(0, 325, 0, 15)
+                ToggleText.Font = Enum.Font.Ubuntu
+                ToggleText.Text = " " .. togtitle
+                ToggleText.TextColor3 = Color3.new(1, 1, 1)
+                ToggleText.TextSize = 16
+                ToggleText.TextXAlignment = Enum.TextXAlignment.Left
+                ToggleDesc.Name = "ToggleDesc"
+                ToggleDesc.Parent = Toggle
+                ToggleDesc.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                ToggleDesc.BackgroundTransparency = 1.000
+                ToggleDesc.Position = UDim2.new(0, 0, 0, 18)
+                ToggleDesc.Size = UDim2.new(0, 325, 0, 12)
+                ToggleDesc.Font = Enum.Font.Ubuntu
+                ToggleDesc.Text = " " .. description
+                ToggleDesc.TextColor3 = Color3.fromRGB(255, 255, 255)
+                ToggleDesc.TextSize = 12.000
+                ToggleDesc.TextXAlignment = Enum.TextXAlignment.Left
+            end
+            
+            Toggle.Name = "Toggle"
+            Toggle.Parent = SectionFrame
+            Toggle.BackgroundColor3 = Color3.new(0.0862745, 0.0862745, 0.0862745)
+            Toggle.BorderColor3 = Color3.new(0, 0, 0)
+            Toggle.BorderSizePixel = 0
+            Toggle.Size = UDim2.new(0, 435, 0, 34)
+        
+            Label.Name = "Label"
+            Label.Parent = Toggle
+            Label.BackgroundColor3 = Color3.new(1, 1, 1)
+            Label.BackgroundTransparency = 1
+            Label.Position = UDim2.new(0, 368, 0, 5)
+            Label.Size = UDim2.new(0, 48, 0, 25)
+            Label.Image = "rbxassetid://3570695787"
+            Label.ImageColor3 = Color3.new(0, 0, 0)
+            Label.ScaleType = Enum.ScaleType.Slice
+            Label.SliceCenter = Rect.new(100, 100, 100, 100)
+        
+            LabelCorner.CornerRadius = UDim.new(0, 4)
+            LabelCorner.Name = "LabelCorner"
+            LabelCorner.Parent = Label
+        
+            Circle.Name = "Circle"
+            Circle.Parent = Label
+            Circle.BackgroundColor3 = Color3.new(1, 1, 1)
+            Circle.BackgroundTransparency = 1
+            Circle.Position = UDim2.new(0, 4, 0, 4)
+            Circle.Size = UDim2.new(0, 18, 0, 18)
+            Circle.Image = "rbxassetid://3570695787"
+            Circle.ImageColor3 = Color3.fromRGB(200, 200, 200)
+            Circle.ScaleType = Enum.ScaleType.Slice
+            Circle.SliceCenter = Rect.new(100, 100, 100, 100)
+        
+            EnableButton.Name = "EnableButton"
+            EnableButton.Parent = Circle
+            EnableButton.BackgroundColor3 = Color3.new(1, 1, 1)
+            EnableButton.BackgroundTransparency = 1
+            EnableButton.BorderColor3 = Color3.new(0, 0, 0)
+            EnableButton.BorderSizePixel = 0
+            EnableButton.Size = UDim2.new(1, 0, 1, 0)
+            EnableButton.Font = Enum.Font.SourceSans
+            EnableButton.Text = ""
+            EnableButton.TextColor3 = Color3.new(0, 0, 0)
+            EnableButton.TextSize = 14
+        
+            local isToggle = false
+        
+            if tog == true then
+                isToggle = true
+                local tweenInfo = TweenInfo.new(
+                    0.12,
+                    Enum.EasingStyle.Linear,
+                    Enum.EasingDirection.In
+                )
+            
+                game.TweenService:Create(Circle, tweenInfo, {ImageColor3 = Color3.fromRGB(126, 63, 189)}):Play()
+                game.TweenService:Create(Circle, tweenInfo, {Position = UDim2.new(0, 25, 0, 4)}):Play()
+            end
+            pcall(callback, isToggle)
+            local OnClick = function() 
+                if isToggle == false then
                     isToggle = true
                     local tweenInfo = TweenInfo.new(
-                        0.12,
-                        Enum.EasingStyle.Linear,
-                        Enum.EasingDirection.In
+                    0.12,
+                    Enum.EasingStyle.Linear,
+                    Enum.EasingDirection.In
                     )
             
                     game.TweenService:Create(Circle, tweenInfo, {ImageColor3 = Color3.fromRGB(126, 63, 189)}):Play()
                     game.TweenService:Create(Circle, tweenInfo, {Position = UDim2.new(0, 25, 0, 4)}):Play()
+                else
+                    isToggle = false
+                    local tweenInfo = TweenInfo.new(
+                    0.12,
+                    Enum.EasingStyle.Linear,
+                    Enum.EasingDirection.In
+                    )
+            
+                    game.TweenService:Create(Circle, tweenInfo, {ImageColor3 = Color3.fromRGB(200, 200, 200)}):Play()
+                    game.TweenService:Create(Circle, tweenInfo, {Position = UDim2.new(0, 4, 0, 4)}):Play()
                 end
                 pcall(callback, isToggle)
-                local OnClick = function() 
-                    if isToggle == false then
-                        isToggle = true
-                        local tweenInfo = TweenInfo.new(
-                        0.12,
-                        Enum.EasingStyle.Linear,
-                        Enum.EasingDirection.In
-                        )
-            
-                        game.TweenService:Create(Circle, tweenInfo, {ImageColor3 = Color3.fromRGB(126, 63, 189)}):Play()
-                        game.TweenService:Create(Circle, tweenInfo, {Position = UDim2.new(0, 25, 0, 4)}):Play()
-                    else
-                        isToggle = false
-                        local tweenInfo = TweenInfo.new(
-                        0.12,
-                        Enum.EasingStyle.Linear,
-                        Enum.EasingDirection.In
-                        )
-            
-                        game.TweenService:Create(Circle, tweenInfo, {ImageColor3 = Color3.fromRGB(200, 200, 200)}):Play()
-                        game.TweenService:Create(Circle, tweenInfo, {Position = UDim2.new(0, 4, 0, 4)}):Play()
+            end
+            EnableButton.MouseButton1Click:Connect(OnClick)
+            return {
+                SetValue = function(val) 
+                    if val~=isToggle then 
+                        OnClick()
                     end
-                    pcall(callback, isToggle)
                 end
-                EnableButton.MouseButton1Click:Connect(OnClick)
-                return {
-                    SetValue = function(val) 
-                        if val~=isToggle then 
-                            OnClick()
-                        end
-                    end
-                }
-                end -- Final
+            }
+        end -- Final
 
                 function Elements:AddDropdown(droptitle, setting, callback)
                     local DropElements = {}
