@@ -154,7 +154,291 @@ function Library:AddWindow(title, gameName)
     local penumbraShadow = Instance.new("ImageLabel")
     local ambientShadow = Instance.new("ImageLabel")
 
-    Library:DraggingEnabled(Header, Container)
+    -- Notification
+    local CurrentAlert = Instance.new("Frame")
+    local UIListLayout = Instance.new("UIListLayout")
+
+
+    CurrentAlert.Name = "CurrentAlert"
+    CurrentAlert.Parent = Gui
+    CurrentAlert.AnchorPoint = Vector2.new(1, 1)
+    CurrentAlert.BackgroundColor3 = Color3.new(1, 1, 1)
+    CurrentAlert.BackgroundTransparency = 1
+    CurrentAlert.BorderColor3 = Color3.new(0, 0, 0)
+    CurrentAlert.BorderSizePixel = 0
+    CurrentAlert.Position = UDim2.new(1, -10, 1, -10)
+    CurrentAlert.Size = UDim2.new(1, -10, 1, -10)
+    CurrentAlert.ZIndex = 9
+
+    UIListLayout.Parent = CurrentAlert
+    UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Right
+    UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+    UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Bottom
+    UIListLayout.Padding = UDim.new(0, 8)
+
+    function Library:AddNoti(header, message, duration, buttonEnable, callback)
+        header = header or "Announcement"
+        message = message or "Nil"
+        duration = duration or 120
+        callback = callback or function() end
+
+        local Template = Instance.new("Frame")
+        local Header = Instance.new("TextLabel")
+        local Message = Instance.new("TextLabel")
+        local UICorner = Instance.new("UICorner")
+        local ButtonContainer = Instance.new("Frame")
+        local YesButton = Instance.new("TextButton")
+        local UICorner_2 = Instance.new("UICorner")
+        local YesIcon = Instance.new("ImageLabel")
+        local NoButton = Instance.new("TextButton")
+        local UICorner_3 = Instance.new("UICorner")
+        local NoIcon = Instance.new("ImageLabel")
+        local BarFrame = Instance.new("Frame")
+        local Bar = Instance.new("Frame")
+        local UICorner_4 = Instance.new("UICorner")
+        local UICorner_5 = Instance.new("UICorner")
+
+        Template.Name = "Template"
+        Template.Parent = CurrentAlert
+        Template.BackgroundColor3 = Color3.new(0.0862745, 0.0862745, 0.0862745)
+        Template.BackgroundTransparency = 0.20000000298023224
+        Template.BorderColor3 = Color3.new(0, 0, 0)
+        Template.BorderSizePixel = 0
+        Template.ClipsDescendants = true
+        Template.Size = UDim2.new(0, 250, 0, 91)
+        Template.ZIndex = 99
+
+        UICorner.CornerRadius = UDim.new(0, 4)
+        UICorner.Parent = Template
+        
+        Header.Name = "Header"
+        Header.Parent = Template
+        Header.AnchorPoint = Vector2.new(0.5, 0)
+        Header.BackgroundColor3 = Color3.new(1, 1, 1)
+        Header.BackgroundTransparency = 1
+        Header.BorderColor3 = Color3.new(0, 0, 0)
+        Header.BorderSizePixel = 0
+        Header.Position = UDim2.new(0.400000006, 0, 0.100000069, 0)
+        Header.Size = UDim2.new(0.75, 0, 0, 20)
+        Header.ZIndex = 100
+        Header.Font = Enum.Font.Ubuntu
+        Header.Text = header
+        Header.TextColor3 = Color3.new(1, 1, 1)
+        Header.TextSize = 18
+        Header.TextXAlignment = Enum.TextXAlignment.Left
+        
+        Message.Name = "Message"
+        Message.Parent = Template
+        Message.AnchorPoint = Vector2.new(0.5, 0)
+        Message.BackgroundColor3 = Color3.new(1, 1, 1)
+        Message.BackgroundTransparency = 1
+        Message.BorderColor3 = Color3.new(0, 0, 0)
+        Message.BorderSizePixel = 0
+        Message.Position = UDim2.new(0.400000006, 0, 0.330000013, 0)
+        Message.Size = UDim2.new(0.75, 0, 0.5, 0)
+        Message.ZIndex = 100
+        Message.Font = Enum.Font.Ubuntu
+        Message.Text = message
+        Message.TextColor3 = Color3.new(1, 1, 1)
+        Message.TextSize = 15
+        Message.TextWrapped = true
+        Message.TextXAlignment = Enum.TextXAlignment.Left
+        Message.TextYAlignment = Enum.TextYAlignment.Top
+        
+        ButtonContainer.Name = "ButtonContainer"
+        ButtonContainer.Parent = Template
+        ButtonContainer.AnchorPoint = Vector2.new(0.5, 0)
+        ButtonContainer.BackgroundColor3 = Color3.new(1, 1, 1)
+        ButtonContainer.BackgroundTransparency = 1
+        ButtonContainer.BorderColor3 = Color3.new(0, 0, 0)
+        ButtonContainer.BorderSizePixel = 0
+        ButtonContainer.Position = UDim2.new(0.889500022, 0, 0.539560497, -40)
+        ButtonContainer.Size = UDim2.new(0, 43, 0, 61)
+        ButtonContainer.ZIndex = 2
+        
+        YesButton.Name = "YesButton"
+        YesButton.Parent = ButtonContainer
+        YesButton.AnchorPoint = Vector2.new(1, 0)
+        YesButton.BackgroundColor3 = Color3.new(0.262745, 0.454902, 0.227451)
+        if buttonEnable == false then
+            YesButton.BackgroundTransparency = 0.6
+            YesButton.Active = false
+        else
+            YesButton.BackgroundTransparency = 0
+        end
+        YesButton.BorderColor3 = Color3.new(0, 0, 0)
+        YesButton.BorderSizePixel = 0
+        YesButton.Position = UDim2.new(1, 0, 0, 0)
+        YesButton.Size = UDim2.new(1, 0, 0, 27)
+        YesButton.ZIndex = 0
+        YesButton.AutoButtonColor = false
+        YesButton.Font = Enum.Font.SourceSans
+        YesButton.Text = ""
+        YesButton.TextColor3 = Color3.new(1, 1, 1)
+        YesButton.TextSize = 22
+
+        UICorner_2.CornerRadius = UDim.new(0, 4)
+        UICorner_2.Parent = YesButton
+        
+        YesIcon.Parent = YesButton
+        YesIcon.AnchorPoint = Vector2.new(0.5, 0.5)
+        YesIcon.BackgroundColor3 = Color3.new(1, 1, 1)
+        YesIcon.BackgroundTransparency = 1
+        YesIcon.BorderColor3 = Color3.new(0, 0, 0)
+        YesIcon.BorderSizePixel = 0
+        YesIcon.Position = UDim2.new(0.5, 0, 0.5, 0)
+        YesIcon.Size = UDim2.new(0, 20, 0, 20)
+        YesIcon.Image = "rbxassetid://7072706620"
+        YesIcon.ImageColor3 = Color3.new(0.137255, 1, 0.0901961)
+
+        Animate:CreateGradient(YesButton)
+        
+        NoButton.Name = "NoButton"
+        NoButton.Parent = ButtonContainer
+        NoButton.AnchorPoint = Vector2.new(1, 1)
+        NoButton.BackgroundColor3 = Color3.new(0, 0, 0)
+        NoButton.BorderColor3 = Color3.new(0, 0, 0)
+        NoButton.BorderSizePixel = 0
+        NoButton.Position = UDim2.new(1, 0, 1, 0)
+        NoButton.Size = UDim2.new(1, 0, 0, 27)
+        NoButton.ZIndex = 0
+        NoButton.AutoButtonColor = false
+        NoButton.Font = Enum.Font.SourceSans
+        NoButton.Text = ""
+        NoButton.TextColor3 = Color3.new(1, 1, 1)
+        NoButton.TextSize = 22
+
+        UICorner_3.CornerRadius = UDim.new(0, 4)
+        UICorner_3.Parent = NoButton
+
+        Animate:CreateGradient(NoButton)
+        
+        NoIcon.Parent = NoButton
+        NoIcon.AnchorPoint = Vector2.new(0.5, 0.5)
+        NoIcon.BackgroundColor3 = Color3.new(1, 1, 1)
+        NoIcon.BackgroundTransparency = 1
+        NoIcon.BorderColor3 = Color3.new(0, 0, 0)
+        NoIcon.BorderSizePixel = 0
+        NoIcon.Position = UDim2.new(0.5, 0, 0.5, 0)
+        NoIcon.Size = UDim2.new(0, 20, 0, 20)
+        NoIcon.Image = "rbxassetid://7072725342"
+        NoIcon.ImageColor3 = Color3.new(1, 0, 0)
+        
+        BarFrame.Name = "BarFrame"
+        BarFrame.Parent = Template
+        BarFrame.AnchorPoint = Vector2.new(0.5, 1)
+        BarFrame.BackgroundColor3 = Color3.new(1, 1, 1)
+        BarFrame.BackgroundTransparency = 0.20000000298023224
+        BarFrame.BorderColor3 = Color3.new(0, 0, 0)
+        BarFrame.BorderSizePixel = 0
+        BarFrame.Position = UDim2.new(0.5, 0, 1, -6)
+        BarFrame.Size = UDim2.new(0, 240, 0, 8)
+        
+        Bar.Parent = BarFrame
+        Bar.AnchorPoint = Vector2.new(0, 1)
+        Bar.BackgroundColor3 = Color3.new(1, 1, 1)
+        Bar.BorderColor3 = Color3.new(0, 0, 0)
+        Bar.BorderSizePixel = 0
+        Bar.Position = UDim2.new(0, 0, 1, 0)
+        Bar.Size = UDim2.new(0.862500012, 0, 1, 0)
+        Bar.ZIndex = 2
+
+        UICorner_4.CornerRadius = UDim.new(0, 2)
+        UICorner_4.Parent = Bar
+
+        Animate:CreateGradient(Bar)
+        
+        UICorner_5.CornerRadius = UDim.new(0, 2)
+        UICorner_5.Parent = BarFrame
+
+        coroutine.wrap(function()
+            while wait() do
+                Template.BackgroundColor3 = Color3.new(0.0862745, 0.0862745, 0.0862745)
+                Header.TextColor3 = Color3.new(1, 1, 1)
+                Message.TextColor3 = Color3.new(1, 1, 1)
+                BarFrame.BackgroundColor3 = Color3.new(1, 1, 1)
+                Bar.BackgroundColor3 = Color3.fromRGB(102, 51, 153)
+            end
+        end)()
+
+        local close = Tween:Create(Bar, TweenInfo.new(duration), {Size = UDim2.new(0, 0, 1,0)})
+        close:Play()
+
+        local closeNoti = function()
+            Utility:TweenTransparency(Template,"bg",1)
+            Utility:TweenTransparency(BarFrame,"bg",1)
+            Utility:TweenTransparency(Bar,"bg",1)
+            Utility:TweenTransparency(Header,"text",1)
+            Utility:TweenTransparency(Message,"text",1)
+            Utility:TweenTransparency(YesButton,"bg",1)
+            Utility:TweenTransparency(YesButton,"text",1)
+            Utility:TweenTransparency(YesIcon, 'img', 1)
+            Utility:TweenTransparency(NoButton,"bg",1)
+            Utility:TweenTransparency(NoButton,"text",1)
+            Utility:TweenTransparency(NoIcon, 'img', 1)
+            wait(0.25)
+            Template:Destroy()
+        end
+
+        close.Completed:Connect(function()
+            closeNoti()
+        end)
+
+        YesButton.MouseButton1Click:Connect(function()
+            print("kdakmdwkam")
+            if buttonEnable == false then
+                return
+            else
+                Utility:Pop(YesButton, 8)
+                closeNoti()
+                wait(0.02)
+                callback()
+            end
+        end)
+
+        NoButton.MouseButton1Click:Connect(function()
+            Utility:Pop(NoButton, 8)
+            closeNoti()
+        end)
+    end -- Final
+
+    -- Icon Minimization
+
+    local IconMinimized = Instance.new("Frame")
+    local ButtonMini = Instance.new("ImageButton")
+    local IconCorner = Instance.new("UICorner")
+    local IconBCorner = Instance.new("UICorner")
+    
+    IconMinimized.Name = "IconMinimized"
+    IconMinimized.Parent = Gui
+    IconMinimized.AnchorPoint = Vector2.new(0.5, 0.5)
+    IconMinimized.BackgroundColor3 = Color3.new(1, 1, 1)
+    IconMinimized.BackgroundTransparency = 1
+    IconMinimized.BorderColor3 = Color3.new(0, 0, 0)
+    IconMinimized.BorderSizePixel = 0
+    IconMinimized.Position = UDim2.new(0.2, 0,0.2, 0)
+    IconMinimized.Size = UDim2.new(0, 55, 0, 55)
+    IconMinimized.ZIndex = 2
+    IconMinimized.Visible = false
+
+    IconCorner.CornerRadius = UDim.new(0, 58)
+    IconCorner.Parent = IconMinimized
+
+    ButtonMini.Name = "ButtonMini"
+    ButtonMini.Parent = IconMinimized
+    ButtonMini.BackgroundColor3 = Color3.new(1, 1, 1)
+    ButtonMini.BackgroundTransparency = 1
+    ButtonMini.BorderColor3 = Color3.new(0, 0, 0)
+    ButtonMini.BorderSizePixel = 0
+    ButtonMini.Size = UDim2.new(1, 0, 1, 0)
+    ButtonMini.AutoButtonColor = false
+    ButtonMini.Image = "rbxassetid://14795514426"
+    ButtonMini.ImageTransparency = 0.30000001192092896
+
+    IconBCorner.CornerRadius = UDim.new(0, 58)
+    IconBCorner.Parent = ButtonMini
+
+    Library:DraggingEnabled(Header, Container, IconMinimized)
 
     Gui.Name = "Gui"
     Gui.Parent = CoreGui
@@ -1298,6 +1582,8 @@ function Library:AddWindow(title, gameName)
                     end)
                 end -- Final
 
+
+            -- Minimize Script
             local minimized = false
     
             ExitButton.MouseButton1Click:Connect(function()
@@ -1308,11 +1594,16 @@ function Library:AddWindow(title, gameName)
                         Enum.EasingDirection.Out
                     )
             
-                    local tween = Tween:Create(Container, tweenInfo, {Size = UDim2.new(0, 670, 0, 30)}):Play()
+                    local tween = Tween:Create(Container, tweenInfo, {Size = UDim2.new(0, 0, 0, 400)}):Play()
                     minimized = true
                     task.wait(0.001)
+                    IconMinimized.Visible = true
                     Exit.Image = "rbxassetid://2777725930"
-                else
+                end
+            end)
+
+            ButtonMini.MouseButton1Click:Connect(function()
+                if minimized == true then
                     local tweenInfo = TweenInfo.new(
                         1,
                         Enum.EasingStyle.Quint,
@@ -1322,6 +1613,7 @@ function Library:AddWindow(title, gameName)
                     local tween = Tween:Create(Container, tweenInfo, {Size = UDim2.new(0, 670, 0, 400)}):Play()
                     minimized = false
                     task.wait(0.001)
+                    IconMinimized.Visible = false
                     Exit.Image = "rbxassetid://2777726146"
                 end
             end)
